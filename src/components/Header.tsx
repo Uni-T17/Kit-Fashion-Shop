@@ -1,21 +1,44 @@
 import { Menu } from "lucide-react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
+import { Button } from "./ui/button";
+import { useState } from "react";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toogleOpen = () => setIsOpen(!isOpen);
   return (
     <header className="bg-sky-400 p-4 text-white">
       <nav className="container mx-auto flex justify-between">
         <Link to="/" className="text-lg font-bold">
           Kit Fashion Shop
         </Link>
-        <button className="lg:hidden">
+        <Button
+          variant="ghost"
+          className="lg:hidden hover:bg-white "
+          onClick={toogleOpen}
+        >
           <Menu />
-        </button>
+        </Button>
+        {/* For PC */}
+        <ul className="hidden gap-6 lg:flex">
+          <li>
+            <MyNav path={"/shop"} title="Shop" />
+          </li>
+          <li>
+            <MyNav path={"/"} title="Home" />
+          </li>
+          <li>
+            <MyNav path={"/cart"} title="Cart" />
+          </li>
+        </ul>
 
-        <div className="hidden gap-1 lg:flex">
-          <Link to="/shop">Shop</Link>
-          <Link to="/">Home</Link>
-          <Link to="/cart">Cart</Link>
+        {/* For Mobile */}
+        <div className="fixed inset-0 z-50 bg-sky-400 opacity-75 ">
+          <div className="">
+            <Link to={"/shop"}>Shop</Link>
+            <Link to={"/"}>Home</Link>
+            <Link to={"cart"}>Cart</Link>
+          </div>
         </div>
       </nav>
     </header>
@@ -23,3 +46,18 @@ function Header() {
 }
 
 export default Header;
+
+function MyNav({ path, title }: { path: string; title: string }) {
+  return (
+    <>
+      <NavLink
+        to={`${path}`}
+        className={({ isActive }) =>
+          isActive ? "text-yellow-300 " : "hover:text-gray-300"
+        }
+      >
+        {title}
+      </NavLink>
+    </>
+  );
+}
