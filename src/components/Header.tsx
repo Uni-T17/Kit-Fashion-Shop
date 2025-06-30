@@ -35,9 +35,15 @@ function Header() {
         {/* For Mobile */}
         <div className="fixed inset-0 z-50 bg-sky-400 opacity-75 ">
           <div className="">
-            <Link to={"/shop"}>Shop</Link>
-            <Link to={"/"}>Home</Link>
-            <Link to={"cart"}>Cart</Link>
+            <Link to={"/shop"} className="text-3xl">
+              Shop
+            </Link>
+            <Link to={"/"} className="text-3xl">
+              Home
+            </Link>
+            <Link to={"cart"} className="text-3xl">
+              Cart
+            </Link>
           </div>
         </div>
       </nav>
