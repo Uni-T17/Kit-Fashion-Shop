@@ -37,11 +37,11 @@ function Header() {
           className={`fixed inset-0 z-50 bg-sky-400 opacity-75 transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-100 ease-in-out `}
         >
           <div className="flex flex-col items-center h-full justify-center gap-8">
-            <Link to={"/shop"} className="text-3xl" onClick={toogleOpen}>
-              Shop
-            </Link>
             <Link to={"/"} className="text-3xl" onClick={toogleOpen}>
               Home
+            </Link>
+            <Link to={"/shop"} className="text-3xl" onClick={toogleOpen}>
+              Shop
             </Link>
             <Link to={"cart"} className="text-3xl" onClick={toogleOpen}>
               Cart
