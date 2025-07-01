@@ -34,7 +34,7 @@ function Header() {
 
         {/* For Mobile */}
         <div
-          className={`fixed inset-0 z-50 bg-sky-400 opacity-75 transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-100 ease-in-out `}
+          className={`fixed inset-0 z-50 bg-sky-400 opacity-75 ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-600 ease-in-out `}
         >
           <div className="flex flex-col items-center h-full justify-center gap-8">
             <Link to={"/"} className="text-3xl" onClick={toogleOpen}>

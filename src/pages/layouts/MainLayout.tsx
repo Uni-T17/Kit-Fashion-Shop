@@ -5,7 +5,7 @@ import { Outlet } from "react-router";
 export default function MainLayout() {
   return (
     <>
-      <div className="flex-column">
+      <div className="flex flex-col min-h-screen ">
         <Header />
         <Outlet />
         <Footer />
