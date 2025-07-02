@@ -1,10 +1,12 @@
 import { Button } from "../ui/button";
+interface ProductType {
+  name: string;
+  id: number;
+  image: string;
+  price: number;
+}
 
-function ProductCard({
-  product,
-}: {
-  product: { name: string; id: number; image: string; price: number };
-}) {
+function ProductCard({ product }: { product: ProductType }) {
   return (
     <div key={product.id} className="flex flex-col p-2 shadow">
       <img className="h-40 w-40 self-center" src={product.image} alt="" />

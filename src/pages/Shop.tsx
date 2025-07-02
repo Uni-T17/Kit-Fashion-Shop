@@ -11,12 +11,20 @@ export default function Shop() {
     { id: 2, name: "T-shirt", price: 30, image: pdimg1 },
     { id: 3, name: "T-shirt", price: 20, image: pdimg2 },
     { id: 4, name: "T-shirt", price: 20, image: pdimg3 },
+    { id: 5, name: "T-shirt", price: 20, image: pdimg },
+    { id: 6, name: "T-shirt", price: 30, image: pdimg1 },
+    { id: 7, name: "T-shirt", price: 20, image: pdimg2 },
+    { id: 8, name: "T-shirt", price: 20, image: pdimg3 },
   ];
   return (
-    <section className="flex grow flex-col">
-      {products.map((product) => (
-        <ProductCard product={product} />
-      ))}
+    <section className="flex grow">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:grid-cols-3">
+          {products.map((product) => (
+            <ProductCard product={product} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
