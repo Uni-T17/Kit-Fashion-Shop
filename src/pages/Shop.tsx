@@ -17,7 +17,7 @@ export default function Shop() {
     { id: 8, name: "T-shirt", price: 20, image: pdimg3 },
   ];
   return (
-    <section className="flex grow">
+    <section className="flex grow p-8">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:grid-cols-3">
           {products.map((product) => (

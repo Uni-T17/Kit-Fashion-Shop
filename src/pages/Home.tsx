@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export default function Home() {
   return (
-    <section className="flex grow items-center 0 ">
+    <section className="flex grow items-center">
       <div className="p-8 text-center px-2 md:text-left container mx-auto lg:ml-16">
         <h1 className="text-3xl text-fw-bold md:text-5xl">
           Welcome to Kit Fashion Shop
@@ -20,6 +20,16 @@ export default function Home() {
         >
           Shop Now
         </Link>
+
+        <div className="mt-4">
+          <input type="radio" className="rounded-full peer/hello" id="hello" name="greeting"/>
+          <label htmlFor="hello">Hello</label>
+          <input type="radio" className="rounded-full peer/hola" id="hola" name="greeting" />
+          <label htmlFor="hola">Hola</label>
+          <p className={"peer-checked/hello:block hidden"}>Hello</p>
+          <p className={"peer-checked/hola:block hidden"}>Hola</p>
+
+        </div>
       </div>
     </section>
   );
