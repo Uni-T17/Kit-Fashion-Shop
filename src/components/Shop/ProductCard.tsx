@@ -16,7 +16,7 @@ function ProductCard({ product }: { product: ProductType }) {
     <div key={product.id} className="flex flex-col p-2 shadow">
       <div className="h-40 w-full rounded-lg relative">
         {!imgLoaded && (
-          <div className="animate-pulse absolute">Image Is loading...</div>
+          <div className="animate-pulse absolute inset-0 rounded-md bg-gray-300"></div>
         )}
         <img
           className={`h-full w-full object-contain absolute transition-opacity duration-300 ${imgLoaded ? "opacity-100" : "opacity-0"}`}
