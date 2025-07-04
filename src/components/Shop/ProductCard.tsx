@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "../ui/button";
 interface ProductType {
   name: string;
@@ -7,9 +8,24 @@ interface ProductType {
 }
 
 function ProductCard({ product }: { product: ProductType }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setImgLoaded(true);
+  };
   return (
     <div key={product.id} className="flex flex-col p-2 shadow">
-      <img className="h-40 w-40 self-center" src={product.image} alt="" />
+      <div className="h-40 w-full rounded-lg relative">
+        {!imgLoaded && (
+          <div className="animate-pulse absolute">Image Is loading...</div>
+        )}
+        <img
+          className={`h-full w-full object-contain absolute transition-opacity duration-300 ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+          src={product.image}
+          alt=""
+          onLoad={handleImageLoad}
+        />
+      </div>
+
       <div className="flex justify-between m-2">
         <div className="">
           <h2>{product.name}</h2>
